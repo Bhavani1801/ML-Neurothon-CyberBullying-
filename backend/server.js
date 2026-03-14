@@ -480,7 +480,7 @@ app.post("/api/analyze-social-media", authenticateToken, async (req, res) => {
     const analysisResults = [];
     for (const comment of mockComments) {
       try {
-        const mlResponse = await axios.post('http://localhost:5000/predict', {
+        const mlResponse = await axios.post('https://ml-neurothon-cyberbullying-1.onrender.com/predict', {
           text: comment.text
         });
         
