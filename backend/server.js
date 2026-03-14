@@ -13,7 +13,20 @@ app.use(express.json());
    Temporary User Storage
 ========================= */
 
-const users = [];
+// CHANGE TO:
+const fs = require('fs');
+const usersFile = './users.json';
+let users = [];
+ 
+// Load users from file on startup
+if (fs.existsSync(usersFile)) {
+  users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
+}
+ 
+// Save users to file function
+const saveUsers = () => {
+  fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+};
 
 /* =========================
    TEST ROUTE
