@@ -136,7 +136,7 @@ app.post("/api/analyze", async (req, res) => {
 
     // Call the ML API at port 5000
     try {
-      const mlResponse = await axios.post('http://localhost:5000/predict', {
+      const mlResponse = await axios.post('https://ml-neurothon-cyberbullying-1.onrender.com/predict', {
         text: text
       });
       
