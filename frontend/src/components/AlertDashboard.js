@@ -11,7 +11,7 @@ const AlertDashboard = ({ alerts: initialAlerts }) => {
 
   useEffect(() => {
     // Connect to WebSocket for real-time alerts
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://ml-neurothon-cyberbullying-1.onrender.com');
     setSocket(newSocket);
 
     newSocket.on('alert', (alert) => {
